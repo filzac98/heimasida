@@ -11,6 +11,12 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
     </div>
     <p class="menu-text">{currentPage || "Heim"}</p>
   </div>
+
+  <!-- Logo Section -->
+  <div class="header-logo">
+    <img src="/images/logo.png" alt="Logo" class="logo" />
+  </div>
+
   <ul class="nav-list">
     <li><a href="/">Heim</a></li>
     <li><a href="/topic">Fráferðin</a></li>
@@ -21,7 +27,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
 <!-- Add a nav list -->
 <nav class="nav-menu">
   <a href="/">
-    <!-- <img src="/images/whitelogo.png" alt="Home" class="nav-logo" /> -->
+    <img src="/images/logo.png" alt="Home" class="nav-logo" />
   </a>
   <ul class="header-nav-list">
     <li><a href="/">Heim</a></li>
@@ -122,6 +128,19 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
   .burger-menu:not(.active):hover .bottom-line {
     transform: translateX(-12px);
   }
+
+  /* Logo Section */
+  .header-logo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centers the logo horizontally */
+  }
+
+  .logo {
+    height: 50px; /* Adjust size as needed */
+    width: auto; /* Maintain aspect ratio */
+  }
+
   /* Menu Text */
   .menu-text {
     font-family: Arial, Helvetica, sans-serif;
