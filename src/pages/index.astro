@@ -1,11 +1,33 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+import "../styles/global.css";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Our Lisbon Adventure">
+  <h1 class="index-header">Portugal 2025</h1>
+  <p>
+    Hey fitti gestur, Vælkomin til okkara heimasíðu. Her ber til at fáa eitt
+    lítið innilit í okkara ferð til Portugal. Tað er jú soleiðis, at Filip er
+    sloppin inn á …, har hann millum annað ferð at hava lærugreinar sum …
+  </p>
+  <p>
+    Og jú mín sann, eg og Páll fara ein túr við. Á hesum universiteti ferð Filip
+    at brúka sín dagligdag, meðan eg og Páll fara at mæla heima, mæla úti og
+    ikki minst so ætla vit at byrja uppá eitt nýtt súrdeiggj ævintýr. Hvør veit,
+    kanska eydnast tað at baka eitt breyð meðan vit búgva tættari ækvator í 1/2
+    ár.
+  </p>
+  <p>
+    Vit gleða okkum at deila nøkur brot úr okkara nýggja dagligdegi við tykkum.
+  </p>
+  <p>Elisabet, Filip og Páll</p>
+  <section class="cards">
+    <Card title="Fráferðin" link="/topic" image="/images/flugvari.webp" />
+    <!-- <Card
+      title="Fyrsta vikan í Portugal"
+      link="/fyrstavika"
+      image="/images/pall1.webp"
+    /> -->
+  </section>
+</MainLayout>

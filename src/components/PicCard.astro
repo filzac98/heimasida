@@ -1,0 +1,41 @@
+---
+const { src, alt, description } = Astro.props;
+---
+
+<div class="cardies">
+  <img class="cardies-image" src={src} alt={alt} />
+  {description && <p class="cardies-text">{description}</p>}
+</div>
+
+<style>
+  .cardies {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    /* Add texture */
+    background-image:
+      radial-gradient(circle, rgba(0, 0, 0, 0.02) 1%, transparent 70%),
+      /* grainy noise effect */ linear-gradient(#f3e1c0, #f3e1c0); /* fallback sand color */
+    background-size:
+      9px 4px,
+      100%;
+    color: #333;
+  }
+
+  .cardies-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .cardies-text {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #333;
+  }
+</style>

@@ -1,0 +1,276 @@
+---
+const { currentPage } = Astro.props; // Accept currentPage as a prop
+---
+
+<header class="header">
+  <div class="menu-icon">
+    <div class="burger-menu">
+      <div class="burger-line top-line"></div>
+      <div class="burger-line middle-line"></div>
+      <div class="burger-line bottom-line"></div>
+    </div>
+    <p class="menu-text">{currentPage || "Heim"}</p>
+  </div>
+  <ul class="nav-list">
+    <li><a href="/">Heim</a></li>
+    <li><a href="/topic">Fráferðin</a></li>
+    <li><a href="/fyrstavika">Fyrsta Vikan</a></li>
+  </ul>
+</header>
+
+<!-- Add a nav list -->
+<nav class="nav-menu">
+  <a href="/">
+    <!-- <img src="/images/whitelogo.png" alt="Home" class="nav-logo" /> -->
+  </a>
+  <ul class="header-nav-list">
+    <li><a href="/">Heim</a></li>
+    <li><a href="/topic">Fráferðin</a></li>
+    <li><a href="/fyrstavika">Fyrsta Vikan</a></li>
+  </ul>
+</nav>
+
+<script src="/src/script/burgerMenu.js"></script>
+
+<style>
+  /* General Reset for Consistency */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Header Styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 102;
+  }
+
+  /* Burger Menu Container */
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 101; /* Higher z-index to keep the burger menu on top of the nav */
+  }
+
+  /* Burger Menu */
+  .burger-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    transition: color 0.3s;
+    z-index: 103; /* Ensure it stays visible above nav-menu */
+  }
+
+  /* Burger Lines */
+  .burger-line {
+    height: 4px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  }
+
+  .top-line {
+    width: 27px;
+    align-self: flex-start;
+    transform-origin: top left;
+  }
+
+  .middle-line {
+    width: 40px;
+    align-self: flex-end;
+    opacity: 1; /* Ensure visibility initially */
+    transition: opacity 0.3s ease;
+  }
+
+  .bottom-line {
+    width: 27px;
+    align-self: flex-end;
+    transform-origin: bottom left;
+  }
+
+  /* Active State for the Burger Lines */
+  .burger-menu.active .top-line {
+    transform: rotate(45deg) translate(1px, 1px); /* Rotate and shift to form the top of "X" */
+  }
+
+  .burger-menu.active .middle-line {
+    opacity: 0; /* Hide the middle line */
+  }
+
+  .burger-menu.active .bottom-line {
+    transform: rotate(-45deg) translate(-8px, -9px); /* Rotate and shift to form the bottom of "X" */
+  }
+
+  /* Apply hover effect only when burger-menu is NOT active */
+  .burger-menu:not(.active):hover .top-line {
+    transform: translateX(12px);
+  }
+
+  .burger-menu:not(.active):hover .bottom-line {
+    transform: translateX(-12px);
+  }
+  /* Menu Text */
+  .menu-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    transition: color 0.3s;
+    z-index: 10000;
+  }
+  /* When the burger menu is active, change the color */
+  .burger-menu.active .burger-line {
+    background-color: rgb(255, 255, 255);
+  }
+
+  /* When the menu text is active, change the color */
+  .menu-text.active {
+    color: rgb(255, 255, 255);
+  }
+
+  /* Cart Icon */
+
+  .nav-menu {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0; /* Position on the left side */
+    background-color: #fb9b50;
+    width: 300px; /* Adjust width */
+    height: 100vh; /* Full height */
+    padding: 2rem;
+    z-index: 51; /* Keep it below burger menu */
+    transform: translateX(-100%); /* Initially off-screen */
+    transition: transform 0.3s ease-in-out; /* Smooth slide-in effect */
+  }
+
+  /* When the 'active' class is added, show the menu */
+  .nav-menu.active {
+    display: block; /* Make it visible */
+    transform: translateX(0); /* Slide the menu in */
+  }
+  .nav-menu ul {
+    margin-top: 20%;
+    list-style-type: none;
+  }
+
+  .nav-menu ul li {
+    margin-bottom: 1rem;
+  }
+
+  .nav-menu ul li a {
+    text-decoration: none;
+    color: #1c1c1e;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .nav-menu ul li a:hover {
+    color: #2c599d;
+  }
+
+  .nav-menu .nav-logo {
+    position: relative; /* Allow movement of the logo */
+    top: -1.3rem; /* Adjust vertically */
+    left: 13rem; /* Adjust horizontally */
+    width: 40px; /* Adjust logo width */
+    z-index: 110; /* Ensure it’s on top of other elements */
+    pointer-events: auto; /* Enable clicking on the logo */
+  }
+
+  /* Social links */
+
+  .social-links {
+    margin-top: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .social-link {
+    color: #ffffff;
+    font-size: 38px;
+    text-decoration: none;
+  }
+
+  .social-link:hover {
+    color: #00b388;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .burger-menu {
+      border: none;
+      background-color: transparent;
+    }
+
+    .menu-text {
+      border: none;
+      background-color: transparent;
+    }
+    .header {
+      padding: 0.5rem 1rem;
+      flex-direction: row-reverse; /* Reverse item order: burger menu -> cart icon */
+    }
+
+    .menu-text {
+      order: -1;
+    }
+
+    .cart-icon {
+      font-size: 1.25rem;
+    }
+
+    .menu-icon {
+      margin-left: auto; /* Push burger menu to the right */
+    }
+    /* Move the nav menu off-screen to the right initially */
+    /* Updated Nav Menu */
+
+    .nav-menu .nav-logo {
+      top: 0;
+      left: 0;
+      width: 40px;
+    }
+    .nav-menu {
+      width: 100%; /* Adjust width */
+    }
+
+    .nav-menu.active:has(+ .cart-icon) + .cart-icon {
+      display: none;
+    }
+
+    /* When the 'active' class is added, show the menu */
+
+    /* Social links */
+
+    .social-links {
+      margin-top: 20%;
+    }
+
+    .cart-header {
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 100%; /* Full width */
+      height: 50%; /* Adjust the height as needed */
+      transform: translateY(-100%); /* Hidden above the screen initially */
+      transition: transform 0.3s ease-in-out;
+    }
+    .cart-header.active {
+      transform: translateY(0); /* Slide down into view */
+    }
+  }
+</style>

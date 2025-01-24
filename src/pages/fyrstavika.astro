@@ -1,0 +1,31 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import "../styles/global.css";
+---
+
+<MainLayout title="Fyrsta Vikan" currentPage="Fyrsta Vikan">
+  <h1>Fyrsta vikan í Portugal</h1>
+  <p>
+    Túrurin til Portugals byrjaði við at vit fóru til Danmarkar í eina nátt, har
+    vit svóvu hjá Elinborg og Jógvani.
+    <br />
+
+    Har fingu vit lekkran indiskan mat frá Gunnleyg. Næsta dagin skuldu vit so
+    flúgva til Portugals. Páll var fantastiskur allan vegin.
+  </p>
+  <div class="gallery">
+    <img
+      class="gallery-image"
+      src="/images/flugvari.webp"
+      alt="Páll umborð á Atlantic"
+    />
+    <img class="gallery-image" src="/images/pall1.webp" alt="Beach Scene 2" />
+    <img class="gallery-image" src="/images/vit3.webp" alt="Beach Scene 3" />
+  </div>
+</MainLayout>
+
+<style>
+  h1 {
+    margin-top: 4rem;
+  }
+</style>
