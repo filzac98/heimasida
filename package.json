@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "heimasida",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,6 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.1.9"
-  }
+    "astro": "^5.1.9",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2"
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
