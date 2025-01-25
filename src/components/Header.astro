@@ -9,30 +9,28 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
       <div class="burger-line middle-line"></div>
       <div class="burger-line bottom-line"></div>
     </div>
-    <p class="menu-text">{currentPage || "Heim"}</p>
   </div>
 
   <!-- Logo Section -->
   <div class="header-logo">
-    <img src="/images/logo.png" alt="Logo" class="logo" />
+    <a href="/">
+      <img src="/images/logo.png" alt="Logo" class="logo" />
+    </a>
   </div>
 
   <ul class="nav-list">
     <li><a href="/">Heim</a></li>
     <li><a href="/topic">Fráferðin</a></li>
-    <li><a href="/fyrstavika">Fyrsta Vikan</a></li>
+    <!-- <li><a href="/fyrstavika">Fyrsta Vikan</a></li> -->
   </ul>
 </header>
 
 <!-- Add a nav list -->
 <nav class="nav-menu">
-  <a href="/">
-    <img src="/images/logo.png" alt="Home" class="nav-logo" />
-  </a>
   <ul class="header-nav-list">
     <li><a href="/">Heim</a></li>
     <li><a href="/topic">Fráferðin</a></li>
-    <li><a href="/fyrstavika">Fyrsta Vikan</a></li>
+    <!-- <li><a href="/fyrstavika">Fyrsta Vikan</a></li> -->
   </ul>
 </nav>
 
@@ -130,15 +128,17 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
   }
 
   /* Logo Section */
+  /* Logo Section */
   .header-logo {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center; /* Centers the logo horizontally */
+    position: absolute;
+    left: 48%;
+    top: 5%;
   }
 
   .logo {
-    height: 50px; /* Adjust size as needed */
+    height: 50px; /* Increase logo size */
     width: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent logo from overflowing */
   }
 
   /* Menu Text */
@@ -200,34 +200,6 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
     color: #2c599d;
   }
 
-  .nav-menu .nav-logo {
-    position: relative; /* Allow movement of the logo */
-    top: -1.3rem; /* Adjust vertically */
-    left: 13rem; /* Adjust horizontally */
-    width: 40px; /* Adjust logo width */
-    z-index: 110; /* Ensure it’s on top of other elements */
-    pointer-events: auto; /* Enable clicking on the logo */
-  }
-
-  /* Social links */
-
-  .social-links {
-    margin-top: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .social-link {
-    color: #ffffff;
-    font-size: 38px;
-    text-decoration: none;
-  }
-
-  .social-link:hover {
-    color: #00b388;
-  }
-
   /* Responsive Adjustments */
   @media (max-width: 768px) {
     .burger-menu {
@@ -248,21 +220,12 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
       order: -1;
     }
 
-    .cart-icon {
-      font-size: 1.25rem;
-    }
-
     .menu-icon {
       margin-left: auto; /* Push burger menu to the right */
     }
     /* Move the nav menu off-screen to the right initially */
     /* Updated Nav Menu */
 
-    .nav-menu .nav-logo {
-      top: 0;
-      left: 0;
-      width: 40px;
-    }
     .nav-menu {
       width: 100%; /* Adjust width */
     }
@@ -270,26 +233,15 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
     .nav-menu.active:has(+ .cart-icon) + .cart-icon {
       display: none;
     }
-
-    /* When the 'active' class is added, show the menu */
-
-    /* Social links */
-
-    .social-links {
-      margin-top: 20%;
+    .header-logo {
+      left: 5%;
+      top: 6%;
     }
 
-    .cart-header {
-      top: 0;
-      right: 0;
-      left: 0;
-      width: 100%; /* Full width */
-      height: 50%; /* Adjust the height as needed */
-      transform: translateY(-100%); /* Hidden above the screen initially */
-      transition: transform 0.3s ease-in-out;
-    }
-    .cart-header.active {
-      transform: translateY(0); /* Slide down into view */
+    .logo {
+      height: 35px; /* Increase logo size */
+      width: auto; /* Maintain aspect ratio */
+      max-width: 100%; /* Prevent logo from overflowing */
     }
   }
 </style>

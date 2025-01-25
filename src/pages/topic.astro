@@ -10,54 +10,64 @@ import "../styles/global.css";
   <div class="gallery">
     <img src="/images/test.webp" alt="Mækjugøta" />
     <p>
-      Túrurin til Portugals byrjaði við at vit fóru til Danmarkar í eina nátt,
-      har vit svóvu hjá Elinborg og Jógvani.
+      Mikudagin 22.januar, byrjaði túrurin til Portugals. Fyrst máttu vit flúgva
+      úr Føroyum til Danmarkar og svóvu, í eina nátt, hjá Elinborg og Jógvani.
+      Tey vóru so blíð og vit sloppu at sova í teirra song, meðan tey svóvu á
+      sofuni. Eisini kom Gunnleyg forbí við lekkrum indiskum mati.
       <br />
+      <br />
+      Næsta dagin ótu vit morgunmat saman og skuldu so flúgva til Portugals. Elisabet
+      var heldur nervøs og hevði ein langan lista yvir tingum sum hon stúrdi fyri.
+      Men listan kundi hon koyra í skrell, tí alt gekk so avbera væl. Øll kuffert
+      blivu tjekkaði inn, vognurin slapp við, passini lóu í lummanum og ikki minst,
+      so var Páll so glaður, ja hann var fantastiskur allan vegin.
 
-      Har fingu vit lekkran indiskan mat frá Gunnleyg. Næsta dagin skuldu vit so
-      flúgva til Portugals. Páll var fantastiskur allan vegin.
+      <br />
+      <br />
+      Omanfyri eru nakrar myndir og eitt lítið filmsbrot av túrinum.
     </p>
 
-    <video controls width="600">
-      <source src="/videos/departure.webm" type="video/webm" />
-    </video>
-    <p>
-      Túrurin til Portugals byrjaði við at vit fóru til Danmarkar í eina nátt,
-      har vit svóvu hjá Elinborg og Jógvani.
-      <br />
+    <iframe
+      class="movie"
+      width="600"
+      height="338"
+      src="https://player.vimeo.com/video/1050216822?h=2736a08078"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    >
+    </iframe>
 
-      Har fingu vit lekkran indiskan mat frá Gunnleyg. Næsta dagin skuldu vit so
-      flúgva til Portugals. Páll var fantastiskur allan vegin.
-    </p>
     <PicCard
       src="/images/vagar.webp"
       alt="á vágunum"
-      description="Komin til vágarnar"
+      description="Omman og abbin í Havn koyrdu okkum til Vágarnar."
     />
     <PicCard
       src="/images/urfo2.webp"
       alt="úr føroyum"
-      description="Áðrenn vit fóru umborð"
+      description="Ávegis umborð "
     />
     <PicCard
       src="/images/atlantic2.webp"
       alt="atlantic"
-      description="Páll smigraði øðiligt umborð og fekk øll at flenna"
+      description="Páll kannaði øll fólkini sum komu umborð, og fekk tey øll at smílast."
     />
     <PicCard
       src="/images/atlantic.webp"
       alt="atlantic"
-      description="Páll var fantastiskur allan vegin!"
+      description="Brádliga var døgurðasteðgur, og Páll fekk sær heimagjørdar pannukøkur"
     />
     <PicCard
       src="/images/dk.webp"
       alt="Komin til danmark"
-      description="Komin til Danmarkar og inn í íbúðina hjá Elinborg og Jógvani."
+      description="Komin til Danmarkar og sita heima hjá Elinborg og Jógvan."
     />
     <PicCard
       src="/images/flugvari.webp"
       alt="Páll umborð á Atlantic"
-      description="Páll svav í 3 tímar áveg til Portugal"
+      description="Á flogtúrinum til Portugal svav Páll í tríggjar tímar!"
     />
   </div>
 </MainLayout>
@@ -66,5 +76,13 @@ import "../styles/global.css";
   h1 {
     margin-top: 4rem;
     text-align: center;
+  }
+
+  .movie {
+    display: block; /* Ensures the iframe is a block element */
+    margin-left: auto; /* Centers the iframe horizontally */
+    margin-right: auto; /* Centers the iframe horizontally */
+    width: 100%; /* Optionally adjust the width */
+    max-width: 800px; /* Optional: Limit the maximum width */
   }
 </style>
