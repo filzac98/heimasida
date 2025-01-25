@@ -41,6 +41,12 @@ header {
   transition: color 0.3s;
 }
 
+.kort {
+  display: block; /* Make the image a block element */
+  margin: 0 auto; /* Center the image horizontally */
+  width: 80%; /* Adjust the width as needed */
+  max-width: 600px; /* Limit the max width */
+}
 .nav-list a:hover {
   color: var(--light-orange);
 }
