@@ -7,6 +7,7 @@ const { title, link, image } = Astro.props;
   {image && <img src={image} alt={title} class="card-image" />}
 </a>
 
+<script src="/src/script/wiggle.js"></script>
 <style>
   .card {
     background-color: var(--card-bg);
@@ -39,5 +40,30 @@ const { title, link, image } = Astro.props;
     height: auto; /* Keeps the image's aspect ratio */
     border-radius: 8px;
     margin-top: 0.5rem;
+  }
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(2deg);
+    }
+    50% {
+      transform: rotate(-2deg);
+    }
+    75% {
+      transform: rotate(1deg);
+    }
+  }
+
+  .card {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .card.wiggle {
+    animation: wiggle 0.5s ease-in-out; /* Wiggle animation for 0.5 seconds */
   }
 </style>

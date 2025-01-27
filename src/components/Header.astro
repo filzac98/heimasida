@@ -21,7 +21,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
   <ul class="nav-list">
     <li><a href="/">Heim</a></li>
     <li><a href="/topic">Fráferðin</a></li>
-    <!-- <li><a href="/fyrstavika">Fyrsta Vikan</a></li> -->
+    <li><a href="/fyrstavika">Fyrstu Dagarnir</a></li>
   </ul>
 </header>
 
@@ -30,7 +30,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
   <ul class="header-nav-list">
     <li><a href="/">Heim</a></li>
     <li><a href="/topic">Fráferðin</a></li>
-    <!-- <li><a href="/fyrstavika">Fyrsta Vikan</a></li> -->
+    <li><a href="/fyrstavika">Fyrstu Dagarnir</a></li>
   </ul>
 </nav>
 
@@ -80,7 +80,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
   /* Burger Lines */
   .burger-line {
     height: 4px;
-    background-color: black;
+    background-color: #f98125;
     border-radius: 2px;
     transition: all 0.3s ease;
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
@@ -140,25 +140,6 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
     width: auto; /* Maintain aspect ratio */
     max-width: 100%; /* Prevent logo from overflowing */
   }
-
-  /* Menu Text */
-  .menu-text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    transition: color 0.3s;
-    z-index: 10000;
-  }
-  /* When the burger menu is active, change the color */
-  .burger-menu.active .burger-line {
-    background-color: rgb(255, 255, 255);
-  }
-
-  /* When the menu text is active, change the color */
-  .menu-text.active {
-    color: rgb(255, 255, 255);
-  }
-
-  /* Cart Icon */
 
   .nav-menu {
     display: none; /* Initially hidden */

@@ -1,31 +1,72 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import PicCard from "../components/PicCard.astro";
 import "../styles/global.css";
 ---
 
-<MainLayout title="Fyrsta Vikan" currentPage="Fyrsta Vikan">
-  <h1>Fyrsta vikan í Portugal</h1>
-  <p>
-    Túrurin til Portugals byrjaði við at vit fóru til Danmarkar í eina nátt, har
-    vit svóvu hjá Elinborg og Jógvani.
-    <br />
-
-    Har fingu vit lekkran indiskan mat frá Gunnleyg. Næsta dagin skuldu vit so
-    flúgva til Portugals. Páll var fantastiskur allan vegin.
-  </p>
+<MainLayout title="Fráferðin" currentPage="Fráferðin">
+  <div class="full-screen-image">
+    <img src="/images/cover.PNG" alt="Full-width picture of Lisbon" />
+  </div>
   <div class="gallery">
-    <img
-      class="gallery-image"
-      src="/images/flugvari.webp"
-      alt="Páll umborð á Atlantic"
-    />
-    <img class="gallery-image" src="/images/pall1.webp" alt="Beach Scene 2" />
-    <img class="gallery-image" src="/images/vit3.webp" alt="Beach Scene 3" />
+    <iframe
+      class="movie"
+      src="https://player.vimeo.com/video/1050786718?h=2c22082703"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    >
+    </iframe>
   </div>
 </MainLayout>
 
+<script src="/src/script/wiggle.js"></script>
 <style>
-  h1 {
-    margin-top: 4rem;
+  body,
+  html {
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+    overflow-x: hidden; /* Prevents horizontal scrolling on the entire page */
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .gallery {
+    overflow-x: hidden; /* Disables horizontal scrolling */
+  }
+
+  .movie {
+    display: block; /* Ensures the iframe is a block element */
+    margin-left: auto; /* Centers the iframe horizontally */
+    margin-right: auto; /* Centers the iframe horizontally */
+    width: 100%; /* Optionally adjust the width */
+    max-width: 1200px; /* Optional: Limit the maximum width */
+    height: 700px;
+  }
+  .full-screen-image {
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Vertically centers if necessary */
+    height: auto; /* Let height adjust based on content */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove padding */
+    overflow: hidden; /* Prevent overflow */
+    box-sizing: border-box; /* Prevent sizing issues */
+  }
+
+  .full-screen-image img {
+    max-width: 100%; /* Restricts the width to 80% of the viewport */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Removes any default margin */
+    display: block; /* Prevents inline spacing around the image */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
   }
 </style>
