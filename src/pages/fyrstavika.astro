@@ -51,8 +51,7 @@ import "../styles/global.css";
     justify-content: center; /* Centers the image horizontally */
     align-items: center; /* Vertically centers if necessary */
     height: auto; /* Let height adjust based on content */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove padding */
+    margin-top: 1.2rem;
     overflow: hidden; /* Prevent overflow */
     box-sizing: border-box; /* Prevent sizing issues */
   }
@@ -68,5 +67,16 @@ import "../styles/global.css";
     margin: 0;
     padding: 0;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  @media (max-width: 668px) {
+    .movie {
+      display: block; /* Ensures the iframe is a block element */
+      margin-left: auto; /* Centers the iframe horizontally */
+      margin-right: auto; /* Centers the iframe horizontally */
+      width: 100%; /* Optionally adjust the width */
+      max-width: 1200px; /* Optional: Limit the maximum width */
+      height: 300px;
+    }
   }
 </style>
