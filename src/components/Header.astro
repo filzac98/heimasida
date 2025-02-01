@@ -23,6 +23,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
     <li><a href="/topic">Fráferðin</a></li>
     <li><a href="/fyrstavika">Fyrstu dagarnir</a></li>
     <li><a href="/30">30 ÁR!</a></li>
+    <li><a href="/vikanfor">Vikan ið fór</a></li>
   </ul>
 </header>
 
@@ -33,6 +34,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
     <li><a href="/topic">Fráferðin</a></li>
     <li><a href="/fyrstavika">Fyrstu Dagarnir</a></li>
     <li><a href="/30">30 ÁR!</a></li>
+    <li><a href="/vikanfor">Vikan ið fór</a></li>
   </ul>
 </nav>
 
@@ -195,7 +197,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
       background-color: transparent;
     }
     .header {
-      padding: 0.5rem 1rem;
+      padding: 1rem 1rem;
       flex-direction: row-reverse; /* Reverse item order: burger menu -> cart icon */
     }
 
@@ -222,7 +224,7 @@ const { currentPage } = Astro.props; // Accept currentPage as a prop
     }
 
     .logo {
-      height: 35px; /* Increase logo size */
+      height: 45px; /* Increase logo size */
       width: auto; /* Maintain aspect ratio */
       max-width: 100%; /* Prevent logo from overflowing */
     }

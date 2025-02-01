@@ -133,3 +133,9 @@ footer {
     display: none;
   }
 }
+
+@media (max-width: 1068px) {
+  .nav-list {
+    display: none;
+  }
+}
