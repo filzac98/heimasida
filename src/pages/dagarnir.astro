@@ -1,0 +1,15 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Card from "../components/Card.astro";
+import "../styles/global.css";
+---
+
+<MainLayout title="Blábera Ævintýrið">
+  <h1 class="index-header">Daglig dagurin í Portugal</h1>
+  <p>Her eru nøkur brot úr okkara nýggja dagligdegi í Lissabon.</p>
+  <section class="cards">
+    <Card title="Fyrstu dagarnir" link="/fyrstavika" image="/images/hus.webp" />
+    <Card title="Vika 1" link="/vikanfor" image="/images/pzfz4.webp" />
+    <Card title="Vika 2" link="/vika2" image="/images/pz.webp" />
+  </section>
+</MainLayout>

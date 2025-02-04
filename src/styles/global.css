@@ -125,6 +125,10 @@ footer {
   color: var(--text-color);
 }
 
+.currentpage {
+  color: #f98125;
+}
+
 @media (max-width: 768px) {
   .gallery img {
     max-width: 100%;
