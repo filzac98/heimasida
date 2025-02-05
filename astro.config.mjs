@@ -1,5 +1,7 @@
 import { defineConfig } from "astro/config";
+import netlify from "@astrojs/netlify";
 
-// dotenv.config(); // Comment this out temporarily for testing
-
-export default defineConfig({});
+export default defineConfig({
+  output: "server", // Ensure output is set to 'server' for SSR
+  adapter: netlify(),
+});

@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^6.1.0",
     "@supabase/supabase-js": "^2.48.1",
     "astro": "^5.2.5",
     "body-parser": "^1.20.3",
