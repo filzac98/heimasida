@@ -1,5 +1,5 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-// https://astro.build/config
+// dotenv.config(); // Comment this out temporarily for testing
+
 export default defineConfig({});
