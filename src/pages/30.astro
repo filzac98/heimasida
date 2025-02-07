@@ -22,6 +22,22 @@ import "../styles/global.css";
     </iframe>
   </div>
 
+  <div class="audio-container">
+    <h2>Jambalaja til Elisabet 30 ár</h2>
+    <p>
+      Hetta er eitt serligt útkast av Jambalaja, sum bleiv gjørt til 30 ára
+      føðingardagin hjá Elisabet
+    </p>
+
+    <audio controls class="styled-audio">
+      <source
+        src="https://www.dropbox.com/scl/fi/a0zi7k2zo0pi2tbuhwvxo/Big30.wav?rlkey=bhgts2vrord7n9dpmvtf2yycq&st=u6re7n0u&raw=1"
+        type="audio/wav"
+      />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
   <section class="comment-section">
     <h2>Viðmerking</h2>
     <form id="comment-form">
@@ -224,6 +240,47 @@ import "../styles/global.css";
     font-size: 1rem;
     color: #333;
     line-height: 1.6;
+  }
+
+  .audio-container {
+    display: flex;
+    flex-direction: column; /* Stack items neatly */
+    align-items: center;
+    justify-content: center;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center; /* Ensure text stays centered */
+  }
+
+  .audio-container h2 {
+    font-size: 1.8rem; /* Make heading a bit larger */
+    margin-bottom: 0.5rem;
+  }
+
+  .audio-container p {
+    font-size: 1rem;
+    max-width: 500px; /* Prevent text from stretching too wide */
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    color: #333;
+  }
+
+  .styled-audio {
+    display: block;
+    width: 100%;
+    min-width: 300px; /* Prevent audio player from shrinking */
+    max-width: 500px; /* Keep it within a reasonable size */
+    margin-top: 0.5rem;
+  }
+
+  audio {
+    width: 100%;
+    outline: none;
+    border-radius: 6px;
   }
 
   @media (max-width: 668px) {
