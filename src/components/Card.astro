@@ -1,8 +1,8 @@
 ---
-const { title, link, image } = Astro.props;
+const { title, link, image, class: customClass = "" } = Astro.props;
 ---
 
-<a href={link} class="card">
+<a href={link} class={`card ${customClass}`}>
   <h2>{title}</h2>
   {image && <img src={image} alt={title} class="card-image" />}
 </a>
@@ -33,6 +33,10 @@ const { title, link, image } = Astro.props;
     font-size: 1.5rem;
     margin: 0.5rem 0;
     color: #fb9b50;
+  }
+
+  .special-card h2 {
+    color: #c8ed4b !important;
   }
 
   .card-image {
