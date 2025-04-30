@@ -1,0 +1,79 @@
+---
+const { title, link, image, class: customClass = "" } = Astro.props;
+---
+
+<a href={link} class={`card ${customClass}`}>
+  <h2>{title}</h2>
+  {image && <img src={image} alt={title} class="card-image" />}
+</a>
+
+<script src="/src/script/wiggle.js"></script>
+<style>
+  .card {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    color: #fb9b50;
+  }
+
+  .special-card h2 {
+    color: #c8ed4b !important;
+  }
+
+  .card-image {
+    max-width: 100%; /* Ensures the image doesn't exceed the card's width */
+    max-height: 460px;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+  }
+
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(2deg);
+    }
+    50% {
+      transform: rotate(-2deg);
+    }
+    75% {
+      transform: rotate(1deg);
+    }
+  }
+
+  .card {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .card.wiggle {
+    animation: wiggle 0.5s ease-in-out; /* Wiggle animation for 0.5 seconds */
+  }
+
+  @media (max-width: 768px) {
+    .card-image {
+      max-height: 100%;
+    }
+  }
+</style>
